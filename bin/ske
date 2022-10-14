@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Ske\Cli\Application;
+
+if (PHP_SAPI !== 'cli' && PHP_SAPI !== 'phpdbg') {
+    echo 'Warning: Ske should be invoked via the CLI version of PHP, not the '.PHP_SAPI.' SAPI'.PHP_EOL;
+}
+
+require_once dirname(__DIR__).'/inc/autoload.php';
+
+return Application::main();

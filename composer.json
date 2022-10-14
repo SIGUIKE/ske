@@ -1,0 +1,74 @@
+{
+    "name": "sikessem/ske",
+    "description": "📦️ SIKessEm Packages Installer.",
+    "homepage": "https://packagist.com/packages/sikessem/ske",
+    "license": "MIT",
+    "keywords": [
+		"sikessem",
+	  	"ske"
+    ],
+  	"authors": [{
+		"name": "SIGUI Kessé Emmanuel",
+		"homepage": "https://sikessem.com",
+		"email": "ske@sikessem.com",
+		"role": "Developer"
+  	}],
+    "support": {
+        "docs": "https://sikessem.github.io/ske",
+        "source": "https://github.com/sikessem/ske",
+        "wiki": "https://github.com/sikessem/ske/wiki",
+        "issues": "https://github.com/sikessem/ske/issues",
+        "chat": "https://github.com/sikessem/ske/discussions"
+    },
+    "require": {
+        "php": "^7.3|^8.0|^8.1",
+        "symfony/console": "^4.0|^5.0|^6.0",
+        "symfony/process": "^4.2|^5.0|^6.0"
+    },
+    "require-dev": {
+        "php": "^8.1",
+        "laravel/pint": "^1.2",
+        "pestphp/pest": "^1.22",
+        "phpstan/phpstan": "^1.8",
+        "phpunit/phpunit": "^9.3",
+        "symfony/var-dumper": "^6.1"
+    },
+    "bin": [
+        "bin/ske"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ske\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ske\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "lint": "pint -v",
+        "test:lint": "pint --test -v",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
